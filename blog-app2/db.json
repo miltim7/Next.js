@@ -1,0 +1,34 @@
+{
+    "categories": [
+        {
+            "id": "1",
+            "name": "События"
+        },
+        {
+            "id": "2",
+            "name": "Новости"
+        }
+    ],
+    "posts": [
+        {
+            "id": "a",
+            "title": "Событие 1",
+            "categoryId": "1"
+        },
+        {
+            "id": "b",
+            "title": "Событие 2",
+            "categoryId": "1"
+        },
+        {
+            "id": "c",
+            "title": "Новость 1",
+            "categoryId": "2"
+        },
+        {
+            "id": "d",
+            "title": "Новость 2",
+            "categoryId": "2"
+        }
+    ]
+}
