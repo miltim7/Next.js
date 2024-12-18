@@ -1,0 +1,160 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f7fafc;
+  color: #2d3748;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #2b6cb0;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #3182ce;
+}
+
+.header {
+  background: #ffffff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.nav-link {
+  font-weight: 500;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.content-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.content-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.home-container {
+  text-align: center;
+  margin-top: 40px;
+}
+.home-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.home-subtitle {
+  font-size: 20px;
+  color: #4a5568;
+}
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.category-item {
+  padding: 10px 15px;
+  background: #edf2f7;
+  border-radius: 6px;
+}
+.category-link {
+  font-weight: 500;
+}
+
+.category-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.category-sidebar {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  min-width: 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.category-sidebar-title {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+.category-sidebar-desc {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.category-content {
+  flex: 1;
+}
+
+.loading {
+  font-size: 16px;
+  color: #4a5568;
+}
+
+.posts-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-item {
+  margin-bottom: 10px;
+}
+.post-link {
+  font-weight: 500;
+}
+
+.favorite-button {
+  background: #3182ce;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.favorite-button:hover {
+  background: #2c5282;
+}
+
+.error-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #e53e3e;
+}
