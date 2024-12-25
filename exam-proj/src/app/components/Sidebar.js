@@ -41,7 +41,7 @@ export default function Sidebar() {
 
             <div
                 className={`${isOpen ? 'translate-x-0' : '-translate-x-full'
-                    } md:translate-x-0 transition-transform fixed md:relative w-60 bg-gray-100 h-screen flex flex-col py-6 px-4 z-40`}
+                    } md:translate-x-0 transition-transform fixed md:relative w-60 bg-white h-screen flex flex-col py-6 px-4 z-40 border-r-[1px] border-r-gray-120 h-screen`}
             >
                 <div className="text-[#343C6A] font-extrabold text-2xl mb-6 flex justify-around">
                     <img src='logo.png' alt="Bank Logo" /> BankDash.

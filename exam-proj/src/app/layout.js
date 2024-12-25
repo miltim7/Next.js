@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="bg-gray-50">
+      <body className="bg-gray-100">
         <div className="flex h-screen">
           <Sidebar />
           <div className="flex flex-col flex-1">
