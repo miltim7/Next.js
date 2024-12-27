@@ -1,0 +1,82 @@
+{
+  "accountSummary": [
+    {
+      "title": "My Balance",
+      "value": "$12,750",
+      "icon": "<img src='accounts/my-balance.png' alt='My Balance' className='w-10 h-10' />"
+    },
+    {
+      "title": "Income",
+      "value": "$5,600",
+      "icon": "<img src='accounts/income.png' alt='Income' className='w-10 h-10' />"
+    },
+    {
+      "title": "Expense",
+      "value": "$3,460",
+      "icon": "<img src='accounts/expence.png' alt='Expense' className='w-10 h-10' />"
+    },
+    {
+      "title": "Total Saving",
+      "value": "$7,920",
+      "icon": "<img src='accounts/total-saving.png' alt='Total Saving' className='w-10 h-10' />"
+    }
+  ],
+  "lastTransactions": [
+    {
+      "name": "Spotify Subscription",
+      "date": "25 Jan 2021",
+      "category": "Shopping",
+      "card": "1234 ****",
+      "status": "Pending",
+      "amount": "-$150",
+      "color": "text-[#FE5C73]",
+      "image": "<img src='accounts/spotify.png' alt='Spotify' className='w-10 h-10' />"
+    },
+    {
+      "name": "Mobile Service",
+      "date": "25 Jan 2021",
+      "category": "Service",
+      "card": "1234 ****",
+      "status": "Completed",
+      "amount": "-$340",
+      "color": "text-[#FE5C73]",
+      "image": "<img src='accounts/mobile.png' alt='Mobile Service' className='w-10 h-10' />"
+    },
+    {
+      "name": "Emily Wilson",
+      "date": "25 Jan 2021",
+      "category": "Transfer",
+      "card": "1234 ****",
+      "status": "Completed",
+      "amount": "+$780",
+      "color": "text-green-300",
+      "image": "<img src='accounts/emilly.png' alt='Emily' className='w-10 h-10' />"
+    }
+  ],
+  "invoices": [
+    {
+      "name": "Apple Store",
+      "time": "5h ago",
+      "amount": "$450",
+      "image": "<img src='accounts/apple-store.png' />"
+    },
+    {
+      "name": "Michael",
+      "time": "2 days ago",
+      "amount": "$160",
+      "image": "<img src='accounts/michael.png' />"
+    },
+    {
+      "name": "Playstation",
+      "time": "5 days ago",
+      "amount": "$1085",
+      "image": "<img src='accounts/playstation.png' />"
+    },
+    {
+      "name": "William",
+      "time": "10 days ago",
+      "amount": "$90",
+      "image": "<img src='accounts/william.png' />"
+    }
+  ]
+}

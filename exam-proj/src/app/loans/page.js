@@ -1,70 +1,35 @@
 "use client";
+
 import { useState, useEffect } from "react";
 
 export default function Loans() {
+  const [loanTypes, setLoanTypes] = useState([]);
   const [loans, setLoans] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/loansData")
+    fetch("/api/loansData")
       .then((res) => res.json())
-      .then((data) => setLoans(data))
-      .catch((err) => console.error("Error:", err));
+      .then((data) => {
+        setLoanTypes(data.loanTypes || []);
+        setLoans(data.loans || []);
+      })
+      .catch((err) => console.error("Error fetching loans data:", err));
   }, []);
 
   return (
     <div className="bg-gray-100">
+      {/* Loan Types Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 max-w-[1400px] mx-auto px-4">
-        {[
-          {
-            title: "Personal Loans",
-            value: "$50,000",
-            icon: (
-              <img
-                src="loans/personal.png"
-                alt="Personal Loans"
-                className="w-[clamp(40px,5vw,70px)] h-[clamp(40px,5vw,70px)]"
-              />
-            ),
-          },
-          {
-            title: "Corporate Loans",
-            value: "$100,000",
-            icon: (
-              <img
-                src="loans/corporate.png"
-                alt="Corporate Loans"
-                className="w-[clamp(40px,5vw,70px)] h-[clamp(40px,5vw,70px)]"
-              />
-            ),
-          },
-          {
-            title: "Business Loans",
-            value: "$500,000",
-            icon: (
-              <img
-                src="loans/business.png"
-                alt="Business Loans"
-                className="w-[clamp(40px,5vw,70px)] h-[clamp(40px,5vw,70px)]"
-              />
-            ),
-          },
-          {
-            title: "Custom Loans",
-            value: "Choose Money",
-            icon: (
-              <img
-                src="loans/custom.png"
-                alt="Custom Loans"
-                className="w-[clamp(40px,5vw,70px)] h-[clamp(40px,5vw,70px)]"
-              />
-            ),
-          },
-        ].map(({ title, value, icon }, i) => (
+        {loanTypes.map(({ title, value, icon }, i) => (
           <div
             key={i}
             className="bg-white rounded-2xl flex items-center gap-4 p-4"
           >
-            <div>{icon}</div>
+            <img
+              src={icon}
+              alt={title}
+              className="w-[clamp(40px,5vw,70px)] h-[clamp(40px,5vw,70px)]"
+            />
             <div>
               <p className="text-[#718EBF] text-base sm:text-sm">{title}</p>
               <p className="text-lg sm:text-base font-semibold text-gray-700">
@@ -75,6 +40,7 @@ export default function Loans() {
         ))}
       </div>
 
+      {/* Loans Overview Section */}
       <h2 className="text-xl sm:text-lg font-semibold text-[#333B69] mb-4 px-4 max-w-[1400px] mx-auto">
         Active Loans Overview
       </h2>
@@ -108,38 +74,33 @@ export default function Loans() {
               </tr>
             </thead>
             <tbody>
-              {loans.map(
-                (
-                  { slNo, loanMoney, leftToRepay, duration, interestRate, installment },
-                  i
-                ) => (
-                  <tr key={i} className="border-b">
-                    <td className="py-2 pl-[10px] pr-0 hidden md:table-cell text-base sm:text-sm text-[#232323]">
-                      {slNo}
-                    </td>
-                    <td className="px-2 py-2 text-base sm:text-sm text-[#232323]">
-                      {loanMoney}
-                    </td>
-                    <td className="px-2 py-2 text-base sm:text-sm text-[#232323]">
-                      {leftToRepay}
-                    </td>
-                    <td className="px-2 py-2 text-base sm:text-sm text-[#232323] hidden md:table-cell">
-                      {duration}
-                    </td>
-                    <td className="px-2 py-2 text-base sm:text-sm text-[#232323] hidden md:table-cell">
-                      {interestRate}
-                    </td>
-                    <td className="px-2 py-2 text-base sm:text-sm text-[#232323] hidden md:table-cell">
-                      {installment}
-                    </td>
-                    <td className="py-2 pl-0 pr-[10px] text-base sm:text-sm">
-                      <button className="border border-[#232323] text-[#232323] rounded-full px-3 py-1 hover:bg-[#232323] hover:text-white">
-                        Repay
-                      </button>
-                    </td>
-                  </tr>
-                )
-              )}
+              {loans.map((loan, i) => (
+                <tr key={i} className="border-b">
+                  <td className="py-2 pl-[10px] pr-0 hidden md:table-cell text-base sm:text-sm text-[#232323]">
+                    {loan.slNo}
+                  </td>
+                  <td className="px-2 py-2 text-base sm:text-sm text-[#232323]">
+                    {loan.loanMoney}
+                  </td>
+                  <td className="px-2 py-2 text-base sm:text-sm text-[#232323]">
+                    {loan.leftToRepay}
+                  </td>
+                  <td className="px-2 py-2 text-base sm:text-sm text-[#232323] hidden md:table-cell">
+                    {loan.duration}
+                  </td>
+                  <td className="px-2 py-2 text-base sm:text-sm text-[#232323] hidden md:table-cell">
+                    {loan.interestRate}
+                  </td>
+                  <td className="px-2 py-2 text-base sm:text-sm text-[#232323] hidden md:table-cell">
+                    {loan.installment}
+                  </td>
+                  <td className="py-2 pl-0 pr-[10px] text-base sm:text-sm">
+                    <button className="border border-[#232323] text-[#232323] rounded-full px-3 py-1 hover:bg-[#232323] hover:text-white">
+                      Repay
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
             <tfoot>
               <tr>
